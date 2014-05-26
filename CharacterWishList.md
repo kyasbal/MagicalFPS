@@ -36,4 +36,5 @@ Tda式Appendミク,http://3d.nicovideo.jp/works/td1586<br>
 技？ 技名 :威力 効果<br>
 技？ 技名 :威力 効果<br>
 技？ 技名 :威力 効果<br>
+「キャラの簡単な説明」<br>
 ***
