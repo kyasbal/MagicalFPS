@@ -1,4 +1,6 @@
-### [Home](https://github.com/LimeStreem/MagicalFPS/wiki)
-### [Summary](https://github.com/LimeStreem/MagicalFPS/wiki/Summary)
-### [Operation](https://github.com/LimeStreem/MagicalFPS/wiki/Operation)
-
+[Home](https://github.com/LimeStreem/MagicalFPS/wiki)  
+[Summary](https://github.com/LimeStreem/MagicalFPS/wiki/Summary)  
+[Operation](https://github.com/LimeStreem/MagicalFPS/wiki/Operation)  
+[Character](https://github.com/LimeStreem/MagicalFPS/wiki/Character)  
+　∟[CharacterWishList](https://github.com/LimeStreem/MagicalFPS/wiki/CharacterWishList)  
+　∟[CharacterList](https://github.com/LimeStreem/MagicalFPS/wiki/CharacterList)  
