@@ -15,13 +15,13 @@
 
 * トリガー一覧  
 A　右手を振り下ろす  
-![A](https://raw.githubusercontent.com/LimeStreem/MagicalFPS/master/wiki/A.gif) 
+![A](https://raw.githubusercontent.com/LimeStreem/MagicalFPS/master/wiki/A.gif)  
 B　右手を横に振る  
-![B](https://raw.githubusercontent.com/LimeStreem/MagicalFPS/master/wiki/B.gif)
+![B](https://raw.githubusercontent.com/LimeStreem/MagicalFPS/master/wiki/B.gif)  
 C　右手で円を描く  
-![C](https://raw.githubusercontent.com/LimeStreem/MagicalFPS/master/wiki/C.gif) 
+![C](https://raw.githubusercontent.com/LimeStreem/MagicalFPS/master/wiki/C.gif)  
 D　右手を床まで振り下ろす  
-![D](https://raw.githubusercontent.com/LimeStreem/MagicalFPS/master/wiki/D.gif)
+![D](https://raw.githubusercontent.com/LimeStreem/MagicalFPS/master/wiki/D.gif)  
 
 [注]なお、魔法の詳細はキャラクターのページに記載します。
 
