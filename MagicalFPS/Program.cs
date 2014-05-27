@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MMF;
+using MMF.Utility;
 
 namespace MagicalFPS
 {
@@ -11,11 +12,8 @@ namespace MagicalFPS
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Initialize RenderContext");
-            RenderContext context=new RenderContext();
-            context.Initialize();
-            MainWindow window=new MainWindow(context);
-            MessagePump.Run(window);
+            GameContext context=new GameContext();
+            MessagePump.Run(context.MainWindow);
         }
     }
 }
