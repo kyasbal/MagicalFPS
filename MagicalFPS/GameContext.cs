@@ -22,7 +22,7 @@ namespace MagicalFPS
             MainWindow.Show();
             RenderContext = MainWindow.RenderContext;
             DirectInput=new DirectInputManager(RenderContext,MainWindow);
-            handOperationChecker=new JoystickHandOperationChecker(this,11);
+            //handOperationChecker=new JoystickHandOperationChecker(this,11);
             Tracer.i("Initializing GameContext Completed!");
         }
 
