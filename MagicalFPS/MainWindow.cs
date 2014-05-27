@@ -22,14 +22,17 @@ namespace MagicalFPS
 {
     public partial class MainWindow :D2DSupportedRenderForm
     {
+        private readonly GameContext _gameContext;
         public static Size MainWindowSize=new Size(640,480);
 
         private OculusDisplayRenderer oculusRenderer;
 
         private OculusDeviceManager oculusDeviceManager;
+        private PMXModel mona;
 
-        public MainWindow()
+        public MainWindow(GameContext gameContext)
         {
+            _gameContext = gameContext;
             InitializeComponent();
             Size = MainWindowSize;
         }
@@ -42,7 +45,7 @@ namespace MagicalFPS
             BasicGrid grid = new BasicGrid();
             grid.Load(RenderContext);
             ScreenContext.WorldSpace.AddResource(grid);
-            var mona = PMXModel.OpenLoad("mona-.pmx", RenderContext);
+            mona = PMXModel.OpenLoad("mona-.pmx", RenderContext);
             mona.Visibility = true;
             mona.Transformer.Position = new Vector3(0, 0, 1);
             ScreenContext.WorldSpace.AddResource(mona);
@@ -53,7 +56,7 @@ namespace MagicalFPS
         public override void Render()
         {
             base.Render();
-            
+            if (_gameContext.handOperationChecker != null) mona.Transformer.Position += Vector3.Normalize(new Vector3(_gameContext.handOperationChecker.getMovementVector(), 0));
             //oculusRenderer.Render();
         }
 
