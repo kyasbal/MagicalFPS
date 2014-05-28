@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using MagicalFPS.Input;
 using MMF.Utility;
 
 namespace MagicalFPS.Command
@@ -62,6 +63,12 @@ namespace MagicalFPS.Command
                         commandArgs[i - 1] = splittedCommand[i];
                     }
                     var args = new object[1] {commandArgs};
+                    if (commandInfo.Item2.ArgCount != -1 && commandInfo.Item2.ArgCount != commandArgs.Length)
+                    {
+                        Tracer.w("コマンド{0}の引数の数が不正です。{1}ではなく{2}個です。", commandInfo.Item2.CommandName, args.Length,
+                            commandInfo.Item2.ArgCount);
+                        continue;
+                    }
                     m.Invoke(this, args);
                 }
                 else
@@ -100,6 +107,27 @@ namespace MagicalFPS.Command
                 builder.AppendFormat("   コマンド:{0}  -  {1}\n", command.Key, command.Value.Item2.Description);
             }
             Tracer.i(builder.ToString());
+        }
+
+        [Command("hi-set-keyboard",2,"入力デバイスとしてキーボードをセットします。")]
+        public void SetKeyboardHendOperationDevice(string[] args)
+        {
+            _context.PlayerContexts[int.Parse(args[0])].HandOperationChecker=new KeyboardHandOperationChecker(_context.DirectInput,int.Parse(args[1]));
+            Tracer.i("{0}のキーボードデバイスを入力デバイスとして選択しました。",int.Parse(args[0]));
+        }
+
+        [Command("hi-set-joystick", 2, "入力デバイスとしてジョイスティックをセットします。")]
+        public void SetJoyStickHendOperationDevice(string[] args)
+        {
+            _context.PlayerContexts[int.Parse(args[0])].HandOperationChecker = new JoystickHandOperationChecker(_context, int.Parse(args[1]));
+            Tracer.i("{0}のジョイスティックを入力デバイスとして選択しました。", int.Parse(args[1]));
+        }
+
+        [Command("toggle-grid",0,"グリッドの表示状態を切り替えます。")]
+        public void ToggleDebugGrid(string[] args)
+        {
+            _context.DebugGrid.Visibility = !_context.DebugGrid.Visibility;
+            Tracer.i("デバッググリッドの表示状態:{0}",_context.DebugGrid.Visibility);
         }
         
     }

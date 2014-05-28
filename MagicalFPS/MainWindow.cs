@@ -14,6 +14,7 @@ using MMF.Grid;
 using MMF.Matricies.Camera.CameraMotion;
 using MMF.Model.PMX;
 using MMF.Oculus;
+using MMF.Sprite.D2D;
 using MMF.Utility;
 using OculusForMikuMikuFlex;
 using SlimDX;
@@ -24,10 +25,7 @@ namespace MagicalFPS
     {
         private readonly GameContext _gameContext;
         public static Size MainWindowSize=new Size(640,480);
-
-        private OculusDisplayRenderer oculusRenderer;
-
-        private OculusDeviceManager oculusDeviceManager;
+        public D2DSpriteSolidColorBrush SolidColorBrush;
         private PMXModel mona;
 
         public MainWindow(GameContext gameContext)
@@ -35,34 +33,24 @@ namespace MagicalFPS
             _gameContext = gameContext;
             InitializeComponent();
             Size = MainWindowSize;
+            FormBorderStyle= FormBorderStyle.FixedSingle;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+            SolidColorBrush = SpriteBatch.CreateSolidColorBrush(Color.Coral);
             ScreenContext.CameraMotionProvider=new BasicCameraControllerMotionProvider(this,this);
-            //とりあえずテストでもなーの読み込み
-            BasicGrid grid = new BasicGrid();
-            grid.Load(RenderContext);
-            ScreenContext.WorldSpace.AddResource(grid);
-            mona = PMXModel.OpenLoad("mona-.pmx", RenderContext);
-            mona.Visibility = true;
-            mona.Transformer.Position = new Vector3(0, 0, 1);
-            ScreenContext.WorldSpace.AddResource(mona);
-            //oculusDeviceManager=new OculusDeviceManager(RenderContext);
-            //oculusRenderer=new OculusDisplayRenderer(RenderContext,WorldSpace);
         }
 
         public override void Render()
         {
             base.Render();
-            if (_gameContext.handOperationChecker != null) mona.Transformer.Position += Vector3.Normalize(new Vector3(_gameContext.handOperationChecker.getMovementVector(), 0));
-            //oculusRenderer.Render();
         }
 
-        //protected override void RenderSprite()
-        //{
-
-        //}
+        protected override void RenderSprite()
+        {
+            SpriteBatch.DWRenderTarget.DrawRectangle(SolidColorBrush,new Rectangle(1,1,100,100));
+        }
     }
 }

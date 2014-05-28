@@ -12,8 +12,6 @@ c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\protobuf-net.dll
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\TargaImage.dll
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\MikuMikuFlex.pdb
-c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\SlimDX.pdb
-c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\SlimDX.xml
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\MMDFileParser.pdb
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\AssimpNet.pdb
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\AssimpNet.xml
@@ -103,3 +101,7 @@ D:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.pdb
 D:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.MainWindow.resources
 D:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.csproj.GenerateResource.Cache
 D:\MagicalFPS\MagicalFPS\bin\Debug\mona-.pmx
+C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\mona-.pmx
+C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.MainWindow.resources
+C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.csproj.GenerateResource.Cache
+C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\run.vmd
