@@ -13,7 +13,7 @@ using MMF.Sprite.D2D;
 
 namespace MagicalFPS
 {
-    public partial class PlayerViewForm : D2DSupportedRenderForm
+    public partial class PlayerViewForm : RenderForm
     {
         public static Size PlayerViewFormSize=new Size(1280,800);
 
@@ -30,13 +30,13 @@ namespace MagicalFPS
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            solidBrush = SpriteBatch.CreateSolidColorBrush(Color.Chartreuse);
+           // solidBrush = SpriteBatch.CreateSolidColorBrush(Color.Chartreuse);
         }
 
-        protected override void RenderSprite()
-        {
-            base.RenderSprite();
-            SpriteBatch.DWRenderTarget.DrawRectangle(solidBrush,new Rectangle(100,100,290,323));
-        }
+        //protected override void RenderSprite()
+        //{
+        //    base.RenderSprite();
+        //    SpriteBatch.DWRenderTarget.DrawRectangle(solidBrush,new Rectangle(100,100,290,323));
+        //}
     }
 }

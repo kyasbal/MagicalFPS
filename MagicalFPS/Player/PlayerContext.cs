@@ -8,12 +8,15 @@ using MagicalFPS.Input;
 using MMF.DeviceManager;
 using MMF.Model.PMX;
 using MMF.Motion;
+using OculusForMikuMikuFlex;
 using SlimDX;
 
 namespace MagicalFPS.Player
 {
     public class PlayerContext
     {
+        public OculusDisplayRenderer displayRenderer;
+
         private IMotionProvider runMotion;
 
         public PlayerContext(GameContext context,int index)
@@ -22,11 +25,12 @@ namespace MagicalFPS.Player
             this.PlayerIndex = index;
             ViewForm=new PlayerViewForm(context.RenderContext);
             ViewForm.Show();
+            //TODO キャラクターのファクトリクラスの作成など
             PlayerModel = PMXModelWithPhysics.OpenLoad("mona-.pmx", context.RenderContext);
             runMotion=PlayerModel.MotionManager.AddMotionFromFile("run.vmd", false);
-            
             ViewForm.WorldSpace = context.GameWorld;
             context.GameWorld.AddResource(PlayerModel);
+            displayRenderer=new OculusDisplayRenderer(context.RenderContext,context.GameWorld);
         }
 
         public GameContext Context { get;private set; }
@@ -70,6 +74,7 @@ namespace MagicalFPS.Player
                     }
                 }
             }
+            displayRenderer.Render();
             ViewForm.Render();
         }
     }

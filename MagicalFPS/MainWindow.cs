@@ -21,7 +21,7 @@ using SlimDX;
 
 namespace MagicalFPS
 {
-    public partial class MainWindow :D2DSupportedRenderForm
+    public partial class MainWindow :RenderForm
     {
         private readonly GameContext _gameContext;
         public static Size MainWindowSize=new Size(640,480);
@@ -39,7 +39,7 @@ namespace MagicalFPS
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            SolidColorBrush = SpriteBatch.CreateSolidColorBrush(Color.Coral);
+            //SolidColorBrush = SpriteBatch.CreateSolidColorBrush(Color.Coral);
             ScreenContext.CameraMotionProvider=new BasicCameraControllerMotionProvider(this,this);
         }
 
@@ -48,9 +48,9 @@ namespace MagicalFPS
             base.Render();
         }
 
-        protected override void RenderSprite()
-        {
-            SpriteBatch.DWRenderTarget.DrawRectangle(SolidColorBrush,new Rectangle(1,1,100,100));
-        }
+        //protected override void RenderSprite()
+        //{
+        //    SpriteBatch.DWRenderTarget.DrawRectangle(SolidColorBrush,new Rectangle(1,1,100,100));
+        //}
     }
 }
