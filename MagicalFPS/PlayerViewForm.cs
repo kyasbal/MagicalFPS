@@ -32,11 +32,5 @@ namespace MagicalFPS
             base.OnLoad(e);
            // solidBrush = SpriteBatch.CreateSolidColorBrush(Color.Chartreuse);
         }
-
-        //protected override void RenderSprite()
-        //{
-        //    base.RenderSprite();
-        //    SpriteBatch.DWRenderTarget.DrawRectangle(solidBrush,new Rectangle(100,100,290,323));
-        //}
     }
 }

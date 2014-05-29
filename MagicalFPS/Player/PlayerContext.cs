@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MagicalFPS.Input;
 using MMF.DeviceManager;
+using MMF.Matricies.Camera;
 using MMF.Model.PMX;
 using MMF.Motion;
 using OculusForMikuMikuFlex;
@@ -28,6 +29,7 @@ namespace MagicalFPS.Player
             //TODO キャラクターのファクトリクラスの作成など
             PlayerModel = PMXModelWithPhysics.OpenLoad("mona-.pmx", context.RenderContext);
             runMotion = PlayerModel.MotionManager.AddMotionFromFile("run.vmd", false);
+            PlayerModel.MotionManager.ApplyMotion(runMotion);
             EyeTextureRenderer = new OculusDisplayRenderer(context.RenderContext, context.GameWorld,0,context.OculusManager);
             ViewForm.WorldSpace.AddResource(EyeTextureRenderer);
             context.GameWorld.AddResource(PlayerModel);
@@ -57,6 +59,10 @@ namespace MagicalFPS.Player
 
         public void Render()
         {
+            CameraProvider cameraProvider = EyeTextureRenderer.cameraProvider;
+            Vector3 la2cp = cameraProvider.CameraPosition - cameraProvider.CameraLookAt;
+            cameraProvider.CameraPosition = cameraProvider.CameraLookAt +
+                                            Vector3.TransformNormal(la2cp, Matrix.RotationY(0.01f));
             if (HandOperationChecker != null)
             {
                 Vector2 normalized = HandOperationChecker.getMovementVector();
@@ -68,7 +74,7 @@ namespace MagicalFPS.Player
                 {
                     normalized.Normalize();
                     PlayerModel.Transformer.Position += new Vector3(normalized.X, 0, normalized.Y);
-                    if (PlayerModel.MotionManager.CurrentMotionProvider==null||!PlayerModel.MotionManager.CurrentMotionProvider.IsPlaying)
+                    if (PlayerModel.MotionManager.CurrentMotionProvider == null || !PlayerModel.MotionManager.CurrentMotionProvider.IsPlaying)
                     {
                         PlayerModel.MotionManager.ApplyMotion(runMotion);
                     }
