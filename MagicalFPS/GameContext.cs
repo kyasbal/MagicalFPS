@@ -28,10 +28,10 @@ namespace MagicalFPS
             DebugGrid.Load(RenderContext);
             GameWorld = MainWindow.WorldSpace;
             GameWorld.AddResource(DebugGrid);
+            DirectInput = new DirectInputManager(RenderContext, MainWindow);
+            OculusManager = new OculusDeviceManager(RenderContext);
             PlayerContexts[0]=new PlayerContext(this,0);
             PlayerContexts[1]=new PlayerContext(this,1);
-            DirectInput=new DirectInputManager(RenderContext,MainWindow);
-            OculusManager=new OculusDeviceManager(RenderContext);
             //handOperationChecker=new JoystickHandOperationChecker(this,11);
             Tracer.i("Initializing GameContext Completed!");
         }

@@ -15,7 +15,7 @@ namespace MagicalFPS.Player
 {
     public class PlayerContext
     {
-        public OculusDisplayRenderer displayRenderer;
+        public OculusDisplayRenderer EyeTextureRenderer;
 
         private IMotionProvider runMotion;
 
@@ -27,10 +27,10 @@ namespace MagicalFPS.Player
             ViewForm.Show();
             //TODO キャラクターのファクトリクラスの作成など
             PlayerModel = PMXModelWithPhysics.OpenLoad("mona-.pmx", context.RenderContext);
-            runMotion=PlayerModel.MotionManager.AddMotionFromFile("run.vmd", false);
-            ViewForm.WorldSpace = context.GameWorld;
+            runMotion = PlayerModel.MotionManager.AddMotionFromFile("run.vmd", false);
+            EyeTextureRenderer = new OculusDisplayRenderer(context.RenderContext, context.GameWorld,0,context.OculusManager);
+            ViewForm.WorldSpace.AddResource(EyeTextureRenderer);
             context.GameWorld.AddResource(PlayerModel);
-            displayRenderer=new OculusDisplayRenderer(context.RenderContext,context.GameWorld);
         }
 
         public GameContext Context { get;private set; }
@@ -74,7 +74,7 @@ namespace MagicalFPS.Player
                     }
                 }
             }
-            displayRenderer.Render();
+            EyeTextureRenderer.RenderTexture();
             ViewForm.Render();
         }
     }

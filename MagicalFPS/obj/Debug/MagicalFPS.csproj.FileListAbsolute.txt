@@ -105,3 +105,4 @@ C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\
 C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.MainWindow.resources
 C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.csproj.GenerateResource.Cache
 C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\run.vmd
+C:\Users\LimeStreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\Resources\Shader\oculus.fx

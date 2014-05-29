@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using MagicalFPS.Input;
 using MMF.Utility;
+using OculusForMikuMikuFlex;
+using SlimDX;
 
 namespace MagicalFPS.Command
 {
@@ -129,6 +131,21 @@ namespace MagicalFPS.Command
             _context.DebugGrid.Visibility = !_context.DebugGrid.Visibility;
             Tracer.i("デバッググリッドの表示状態:{0}",_context.DebugGrid.Visibility);
         }
-        
+
+        [Command("set-v-eyeDist",1,"目の間隔の距離を調整します。")]
+        public void SetEyeDistance(string[] args)
+        {
+            foreach (var playerContext in _context.PlayerContexts)
+            {
+                playerContext.EyeTextureRenderer.EyeDistance = float.Parse(args[0]);
+            }
+        }
+
+        [Command("set-v-lensOffset", 2, "レンズのオフセットを調整します")]
+        public void SetLensCenterOffset(string[] args)
+        {
+            OculusDisplayRenderer.RiftLensCenterOffset=new Vector2(float.Parse(args[0]),float.Parse(args[1]));
+            Tracer.i("レンズオフセット:{0}",OculusDisplayRenderer.RiftLensCenterOffset);
+        }
     }
 }
