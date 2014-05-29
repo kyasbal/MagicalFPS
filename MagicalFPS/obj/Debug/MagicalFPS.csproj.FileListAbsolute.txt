@@ -154,3 +154,5 @@ C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.x64.pdb
 C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.Win32.pdb
 C:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.exe
 C:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.pdb
+D:\MagicalFPS\MagicalFPS\bin\Debug\Resources\Shader\oculus.fx
+D:\MagicalFPS\MagicalFPS\bin\Debug\run.vmd

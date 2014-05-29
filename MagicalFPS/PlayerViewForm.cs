@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MMF;
 using MMF.Controls.Forms;
 using MMF.Sprite.D2D;
+using SlimDX;
 
 namespace MagicalFPS
 {
@@ -25,6 +26,7 @@ namespace MagicalFPS
             FormBorderStyle=FormBorderStyle.FixedSingle;
             Size = PlayerViewFormSize;
             SizeGripStyle=SizeGripStyle.Hide;
+            BackgroundColor=new Vector3(0,0,0);
         }
 
         protected override void OnLoad(EventArgs e)
