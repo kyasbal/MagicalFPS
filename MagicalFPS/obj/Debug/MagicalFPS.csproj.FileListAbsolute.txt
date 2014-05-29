@@ -12,6 +12,8 @@ c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\protobuf-net.dll
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\TargaImage.dll
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\MikuMikuFlex.pdb
+c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\SlimDX.pdb
+c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\SlimDX.xml
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\MMDFileParser.pdb
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\AssimpNet.pdb
 c:\users\limestreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\AssimpNet.xml
@@ -101,8 +103,54 @@ D:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.pdb
 D:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.MainWindow.resources
 D:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.csproj.GenerateResource.Cache
 D:\MagicalFPS\MagicalFPS\bin\Debug\mona-.pmx
-C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\mona-.pmx
-C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.MainWindow.resources
-C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.csproj.GenerateResource.Cache
-C:\Users\LimeStreem\Documents\Visual Studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\run.vmd
-C:\Users\LimeStreem\documents\visual studio 2013\Projects\MagicalFPS\MagicalFPS\bin\Debug\Resources\Shader\oculus.fx
+C:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.csprojResolveAssemblyReference.cache
+C:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.MainWindow.resources
+C:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.csproj.GenerateResource.Cache
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Shader\debugDot.fx
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Shader\Xshader.fx
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon0.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon1.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon10.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon2.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon3.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon4.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon5.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon6.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon7.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon8.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Toon\toon9.bmp
+C:\MagicalFPS\MagicalFPS\bin\Debug\Resource\Shader\GridShader.fx
+C:\MagicalFPS\MagicalFPS\bin\Debug\mona-.pmx
+C:\MagicalFPS\MagicalFPS\bin\Debug\MagicalFPS.exe.config
+C:\MagicalFPS\MagicalFPS\bin\Debug\MagicalFPS.exe
+C:\MagicalFPS\MagicalFPS\bin\Debug\MagicalFPS.pdb
+C:\MagicalFPS\MagicalFPS\bin\Debug\MikuMikuFlex.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\MMDFileParser.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\OculusForMikuMikuFlex.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\SlimDX.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\BulletSharp.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\AssimpNet.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\NiWrapper.Net.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\NiWrapper.NiTE.Net.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\System.Data.SQLite.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\protobuf-net.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\TargaImage.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.Interface.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\SharpDX.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.x64.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.Win32.dll
+C:\MagicalFPS\MagicalFPS\bin\Debug\MikuMikuFlex.pdb
+C:\MagicalFPS\MagicalFPS\bin\Debug\MMDFileParser.pdb
+C:\MagicalFPS\MagicalFPS\bin\Debug\OculusForMikuMikuFlex.pdb
+C:\MagicalFPS\MagicalFPS\bin\Debug\AssimpNet.pdb
+C:\MagicalFPS\MagicalFPS\bin\Debug\AssimpNet.xml
+C:\MagicalFPS\MagicalFPS\bin\Debug\protobuf-net.xml
+C:\MagicalFPS\MagicalFPS\bin\Debug\TargaImage.xml
+C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.Interface.pdb
+C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.pdb
+C:\MagicalFPS\MagicalFPS\bin\Debug\SharpDX.xml
+C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.x64.pdb
+C:\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.Win32.pdb
+C:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.exe
+C:\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.pdb
