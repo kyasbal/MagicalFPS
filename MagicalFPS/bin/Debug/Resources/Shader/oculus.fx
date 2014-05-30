@@ -2,11 +2,11 @@
 texture2D viewTex:VIEWTEX;
 float2 lensCenterOffset:LENSOFFSET = { 0, 0 };
 float aspectRatio = 640 / 800.0;
-float scaling=2.0;
+float scaling=3.5;
 float4 u_distortion = {1,0.22,0.24,0};
 SamplerState basicSampler
 {
-
+	Filter = MIN_MAG_MIP_LINEAR;
 };
 struct VS_INPUT
 {

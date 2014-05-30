@@ -32,6 +32,8 @@ namespace MagicalFPS
             OculusManager = new OculusDeviceManager(RenderContext);
             PlayerContexts[0]=new PlayerContext(this,0);
             PlayerContexts[1]=new PlayerContext(this,1);
+            Controller=new ControlForm(this);
+            Controller.Show();
             //handOperationChecker=new JoystickHandOperationChecker(this,11);
             Tracer.i("Initializing GameContext Completed!");
         }
@@ -49,6 +51,8 @@ namespace MagicalFPS
         public WorldSpace GameWorld { get; private set; }
 
         public OculusDeviceManager OculusManager { get; private set; }
+
+        public ControlForm Controller { get; private set; }
 
         public void Render()
         {
