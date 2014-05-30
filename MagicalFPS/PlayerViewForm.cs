@@ -24,7 +24,7 @@ namespace MagicalFPS
         {
             InitializeComponent();
             FormBorderStyle=FormBorderStyle.FixedSingle;
-            Size = PlayerViewFormSize;
+            ClientSize = PlayerViewFormSize;
             SizeGripStyle=SizeGripStyle.Hide;
             BackgroundColor=new Vector3(0,0,0);
         }

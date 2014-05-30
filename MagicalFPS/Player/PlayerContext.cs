@@ -1,20 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MagicalFPS.Input;
+using MMDFileParser;
 using MMF.DeviceManager;
 using MMF.Matricies.Camera;
 using MMF.Model.PMX;
 using MMF.Motion;
+using MMF.Sprite;
+using MMF.Sprite.D2D;
 using OculusForMikuMikuFlex;
+using RiftDotNet;
 using SlimDX;
+using SlimDX.Direct2D;
+using CGHelper = MMF.Utility.CGHelper;
 
 namespace MagicalFPS.Player
 {
-    public class PlayerContext
+    public class PlayerContext:OculusD2DHandler
     {
         public OculusDisplayRenderer EyeTextureRenderer;
 
@@ -30,7 +37,7 @@ namespace MagicalFPS.Player
             PlayerModel = PMXModelWithPhysics.OpenLoad("mona-.pmx", context.RenderContext);
             runMotion = PlayerModel.MotionManager.AddMotionFromFile("run.vmd", false);
             PlayerModel.MotionManager.ApplyMotion(runMotion);
-            EyeTextureRenderer = new OculusDisplayRenderer(context.RenderContext, context.GameWorld,0,context.OculusManager);
+            EyeTextureRenderer = new OculusDisplayRenderer(context.RenderContext, context.GameWorld,0,context.OculusManager,this);
             ViewForm.WorldSpace.AddResource(EyeTextureRenderer);
             context.GameWorld.AddResource(PlayerModel);
         }
@@ -57,12 +64,16 @@ namespace MagicalFPS.Player
         /// </summary>
         public PMXModel PlayerModel { get; private set; }
 
+        private Vector3 camRot = Vector3.UnitZ*30;
+
         public void Render()
         {
             CameraProvider cameraProvider = EyeTextureRenderer.cameraProvider;
-            Vector3 la2cp = cameraProvider.CameraPosition - cameraProvider.CameraLookAt;
-            cameraProvider.CameraPosition = cameraProvider.CameraLookAt +
-                                            Vector3.TransformNormal(la2cp, Matrix.RotationY(0.01f));
+            //camRot = Vector3.TransformNormal(camRot, Matrix.RotationY(0.01f));
+            cameraProvider.CameraPosition = camRot + Vector3.UnitY*30;
+            ISensorFusion sensorFusion = Context.OculusManager.getSensorFusion(0);
+            Vector3 cp2la = Vector3.TransformNormal(-camRot,Matrix.RotationQuaternion(sensorFusion.GetOrientation()));
+            cameraProvider.CameraLookAt = cameraProvider.CameraPosition + cp2la*30;
             if (HandOperationChecker != null)
             {
                 Vector2 normalized = HandOperationChecker.getMovementVector();
@@ -82,6 +93,18 @@ namespace MagicalFPS.Player
             }
             EyeTextureRenderer.RenderTexture();
             ViewForm.Render();
+        }
+
+        private D2DSpriteSolidColorBrush col;
+
+        protected override void DrawBatch(D2DSpriteBatch batch)
+        {
+            //batch.DWRenderTarget.FillRectangle(col,batch.FillRectangle);
+        }
+
+        public override void OnLoad(D2DSpriteBatch batch)
+        {
+            col = batch.CreateSolidColorBrush(Color.FromArgb(120,255,0,0));
         }
     }
 }
