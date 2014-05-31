@@ -211,3 +211,4 @@ C:\Users\Yidao\Documents\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.x64.pdb
 C:\Users\Yidao\Documents\MagicalFPS\MagicalFPS\bin\Debug\RiftDotNet.Win32.pdb
 C:\Users\Yidao\Documents\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.exe
 C:\Users\Yidao\Documents\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.pdb
+C:\Users\Yidao\Documents\MagicalFPS\MagicalFPS\obj\Debug\MagicalFPS.ControlForm.resources

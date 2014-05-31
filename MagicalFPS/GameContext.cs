@@ -14,6 +14,7 @@ using MMF.Model.PMX;
 using MMF.Oculus;
 using MMF.Utility;
 using SlimDX;
+using MMF.Sprite;
 namespace MagicalFPS
 {
     public class GameContext
@@ -53,6 +54,18 @@ namespace MagicalFPS
         public OculusDeviceManager OculusManager { get; private set; }
 
         public ControlForm Controller { get; private set; }
+
+        public int charactorCount = 2;
+
+        public PlayerDescription[] playerDescriptions;
+
+        public void InitializePlayerDescriptions(D2DSpriteBatch batch)
+        {
+            if (playerDescriptions != null) return;
+            playerDescriptions = new PlayerDescription[charactorCount];
+            playerDescriptions[0] = new PlayerDescription(batch,"八頭身モナー", "たま", "なみ", "おこる", "C:\\Users\\Yidao\\Documents\\MagicalFPS\\hattousin.gif");
+            playerDescriptions[1] = new PlayerDescription(batch,"初音ミク", "ネギビーム", "ネギカッター", "ネギバースト", "C:\\Users\\Yidao\\Documents\\MagicalFPS\\miku.png");
+        }
 
         public void Render()
         {

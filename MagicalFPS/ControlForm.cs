@@ -52,5 +52,26 @@ namespace MagicalFPS
             OculusDisplayRenderer.RiftLensCenterOffset += new Vector2(-0.01f, 0);
             Tracer.i("レンズオフセット:{0}", OculusDisplayRenderer.RiftLensCenterOffset.X);
         }
+
+        private void bo_MakeNear_Click(object sender, EventArgs e)
+        {
+            float gap=0;
+            foreach (var item in _context.PlayerContexts)
+            {
+                item.HorizonalGap -= 0.01f;
+            }
+            Tracer.i("Batch Offset:{0}",_context.PlayerContexts[0].HorizonalGap);
+        }
+
+        private void bo_MakeFar_Click(object sender, EventArgs e)
+        {
+            foreach (var item in _context.PlayerContexts)
+            {
+                item.HorizonalGap += 0.01f;
+            }
+            Tracer.i("Batch Offset:{0}", _context.PlayerContexts[0].HorizonalGap);
+        }
+
+        
     }
 }
