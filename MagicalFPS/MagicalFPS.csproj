@@ -78,11 +78,14 @@
       <DependentUpon>PlayerViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Player\PlayerContext.cs" />
+    <Compile Include="Player\PlayerDescription.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="mona-.pmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
