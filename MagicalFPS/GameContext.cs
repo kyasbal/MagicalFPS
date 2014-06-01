@@ -4,8 +4,8 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MagicalFPS.Effect;
 using MagicalFPS.Input;
+using MagicalFPS.MagicEffect;
 using MagicalFPS.Player;
 using MMF;
 using MMF.DeviceManager;
@@ -41,7 +41,7 @@ namespace MagicalFPS
             Controller.Show();
             _drawable = new CircleEffect(this);
             GameWorld.AddResource(_drawable);
-            _drawable.Start(new Vector3(0,0,0),new Vector3(0,0,0));
+            _drawable.Start(new Vector3(0,0,0),new Vector3(1,0,1));
 
             //handOperationChecker=new JoystickHandOperationChecker(this,11);
             Tracer.i("Initializing GameContext Completed!");
@@ -96,7 +96,7 @@ namespace MagicalFPS
         public void StartEffect()
         {
             
-            _drawable.Start(Vector3.Zero,Vector3.Zero);
+            _drawable.Start(Vector3.Zero,new Vector3(1,0,1));
         }
 
         public void Dispose()

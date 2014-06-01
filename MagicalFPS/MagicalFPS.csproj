@@ -65,12 +65,12 @@
     <Compile Include="ControlForm.Designer.cs">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Effect\BaseShape\DividedPlaneBoard.cs" />
-    <Compile Include="Effect\BaseShape\PositionWithNormalInputLayout.cs" />
-    <Compile Include="Effect\BaseShape\ShapeBaseWithNormal.cs" />
-    <Compile Include="Effect\BulletEffect.cs" />
-    <Compile Include="Effect\CircleEffect.cs" />
-    <Compile Include="Effect\EffectBase.cs" />
+    <Compile Include="MagicEffect\BaseShape\DividedPlaneBoard.cs" />
+    <Compile Include="MagicEffect\BaseShape\PositionWithNormalInputLayout.cs" />
+    <Compile Include="MagicEffect\BaseShape\ShapeBaseWithNormal.cs" />
+    <Compile Include="MagicEffect\BulletEffect.cs" />
+    <Compile Include="MagicEffect\CircleEffect.cs" />
+    <Compile Include="MagicEffect\EffectBase.cs" />
     <Compile Include="GameContext.cs" />
     <Compile Include="Input\IHandOperationChecker.cs" />
     <Compile Include="Input\JoystickHandOperationChecker.cs" />
@@ -112,7 +112,7 @@
     <Content Include="Resources\Effect\noise.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Shader\beam.fx">
+    <Content Include="Resources\Shader\convergenceBeam.fx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Shader\oculus.fx">

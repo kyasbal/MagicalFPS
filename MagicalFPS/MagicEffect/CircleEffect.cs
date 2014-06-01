@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MagicalFPS.Effect.BaseShape;
+using MagicalFPS.MagicEffect.BaseShape;
 using MMF.DeviceManager;
-using MMF.Model;
 using MMF.Model.Shape;
 using MMF.Utility;
 using SlimDX;
 using SlimDX.Direct3D11;
 
-namespace MagicalFPS.Effect
+namespace MagicalFPS.MagicEffect
 {
 
     class CircleEffect:EffectBase
@@ -38,12 +32,12 @@ namespace MagicalFPS.Effect
 
         private int currentBeamIndex = 0;
 
-        public CircleEffect(GameContext context)
+        public CircleEffect(GameContext context):base(context)
         {
             _context = context;
             effect = CGHelper.CreateEffectFx5("Resources\\Shader\\circleShader.fx",
                 context.RenderContext.DeviceManager.Device);
-            beffect = CGHelper.CreateEffectFx5("Resources\\Shader\\beam.fx",
+            beffect = CGHelper.CreateEffectFx5("Resources\\Shader\\convergenceBeam.fx",
                 context.RenderContext.DeviceManager.Device);
             noiseView = context.LoadTexture("Resources\\Effect\\noise.png");
             beamView = context.LoadTexture("Resources\\Effect\\lazer.png");
@@ -75,10 +69,12 @@ namespace MagicalFPS.Effect
         /// <param name="arg3">The arg3.</param>
         private void Renderbeam(PlaneBoard arg1, SlimDX.Direct3D11.Effect arg2, ShaderResourceView arg3)
         {
+            arg1.Transformer.Rotation = Quaternion.RotationAxis(-Vector3.Cross(_startDirection, Vector3.UnitZ),
+                Vector3.Dot(_startDirection, Vector3.UnitZ));
             arg1.DefaultEffectSubscribe();
             beffect.GetVariableBySemantic("NOISETEX").AsResource().SetResource(beamView);
             beffect.GetVariableBySemantic("TIME").AsScalar().Set(lastTime);
-            beffect.GetVariableBySemantic("STARTPOS").AsVector().Set(Vector3.Zero);
+            beffect.GetVariableBySemantic("STARTPOS").AsVector().Set(_startPosition);
             beffect.GetVariableBySemantic("TARGETPOS").AsVector().Set(new Vector3(0,0,300));
             beffect.GetVariableBySemantic("UP").AsVector().Set(Vector3.TransformNormal(Vector3.UnitY*100,Matrix.RotationZ((float) (2*Math.PI/beamEffects.Length*currentBeamIndex))));
             beffect.GetVariableBySemantic("EYE").AsVector().Set(_context.RenderContext.CurrentTargetContext.MatrixManager.ViewMatrixManager.CameraPosition);
@@ -97,16 +93,18 @@ namespace MagicalFPS.Effect
 
         protected override void Draw(long time)
         {
-            foreach (var dividedPlaneBoard in beamEffects)
+            InvokeInDisableDepth(() =>
             {
-                dividedPlaneBoard.Draw();
-            }
-            frontCircle.Draw();
-            foreach (var drawable in subCircle)
-            {
-                drawable.Draw();
-            }
-            
+                foreach (var dividedPlaneBoard in beamEffects)
+                {
+                    dividedPlaneBoard.Draw();
+                }
+                frontCircle.Draw();
+                foreach (var drawable in subCircle)
+                {
+                    drawable.Draw();
+                }
+            });
         }
 
         protected override void Update(long time)

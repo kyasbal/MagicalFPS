@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SlimDX.Direct3D11;
 
-namespace MagicalFPS.Effect
+namespace MagicalFPS.MagicEffect
 {
     class BulletEffect:EffectBase
     {
-        public BulletEffect(GameContext context)
+        private Effect effect;
+
+        private GameContext game;
+
+        public BulletEffect(GameContext context):base(context)
         {
+            game = context;
         }
 
         protected override void Draw(long time)

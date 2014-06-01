@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MMF.Model;
 using SlimDX;
 
-namespace MagicalFPS.Effect
+namespace MagicalFPS.MagicEffect
 {
     abstract class EffectBase:DefaultDrawableImpl
     {
+        private readonly GameContext _gameContext;
         private static Stopwatch stopWatch;
 
         static EffectBase()
@@ -33,8 +30,9 @@ namespace MagicalFPS.Effect
             isPlaying = true;
         }
 
-        protected EffectBase() : base()
+        protected EffectBase(GameContext gameContext) : base()
         {
+            _gameContext = gameContext;
         }
 
 
@@ -63,5 +61,18 @@ namespace MagicalFPS.Effect
         }
 
         protected abstract void Update(long time);
+
+        /// <summary>
+        /// 深度バッファを無効にして指定したでりげーとを実行します
+        /// </summary>
+        /// <param name="act"></param>
+        protected void InvokeInDisableDepth(Action act)
+        {
+            var immediateContext = _gameContext.RenderContext.DeviceManager.Device.ImmediateContext;
+            var depth = immediateContext.OutputMerger.GetDepthStencilView();
+            immediateContext.OutputMerger.SetTargets(immediateContext.OutputMerger.GetRenderTargets(1));
+            act();
+            immediateContext.OutputMerger.SetTargets(depth, immediateContext.OutputMerger.GetRenderTargets(1));
+        }
     }
 }

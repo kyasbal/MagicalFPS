@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MMDFileParser;
+﻿using System.Collections.Generic;
 using MMF;
 using MMF.Model.Shape;
 using SlimDX;
 using SlimDX.Direct3D11;
 using CGHelper = MMF.Utility.CGHelper;
 
-namespace MagicalFPS.Effect.BaseShape
+namespace MagicalFPS.MagicEffect.BaseShape
 {
     class DividedPlaneBoard:PlaneBoard
     {

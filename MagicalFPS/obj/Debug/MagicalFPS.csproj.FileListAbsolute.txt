@@ -117,5 +117,5 @@ D:\MFPS\MagicalFPS\obj\Debug\MagicalFPS.pdb
 D:\MFPS\MagicalFPS\bin\Debug\Resources\Effect\circle.png
 D:\MFPS\MagicalFPS\bin\Debug\Resources\Shader\circleShader.fx
 D:\MFPS\MagicalFPS\bin\Debug\Resources\Effect\noise.png
-D:\MFPS\MagicalFPS\bin\Debug\Resources\Shader\beam.fx
 D:\MFPS\MagicalFPS\bin\Debug\Resources\Effect\lazer.png
+D:\MFPS\MagicalFPS\bin\Debug\Resources\Shader\convergenceBeam.fx
