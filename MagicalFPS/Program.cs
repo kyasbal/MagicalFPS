@@ -32,6 +32,7 @@ namespace MagicalFPS
             CommandListener listener=new CommandListener(context);
             MessagePump.Run(context.MainWindow,context.Render);
             listener.Dispose();
+            context.Dispose();
         }
 
         private static void disableConsoleClosing()

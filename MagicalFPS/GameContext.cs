@@ -21,7 +21,7 @@ using SlimDX.Direct3D11;
 
 namespace MagicalFPS
 {
-    public class GameContext
+    public class GameContext:IDisposable
     {
         public GameContext()
         {
@@ -97,6 +97,12 @@ namespace MagicalFPS
         {
             
             _drawable.Start(Vector3.Zero,Vector3.Zero);
+        }
+
+        public void Dispose()
+        {
+            _drawable.Dispose();
+            RenderContext.Dispose();
         }
     }
 }

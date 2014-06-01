@@ -63,10 +63,5 @@ namespace MagicalFPS.Effect
         }
 
         protected abstract void Update(long time);
-
-        public override void Dispose()
-        {
-            
-        }
     }
 }

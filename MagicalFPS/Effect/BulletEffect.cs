@@ -21,5 +21,10 @@ namespace MagicalFPS.Effect
         {
             
         }
+
+        public override void Dispose()
+        {
+            
+        }
     }
 }

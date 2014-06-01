@@ -29,8 +29,8 @@ float4 TSprite_PS(VS_OUTPUT vo):SV_Target
 	float4 color = mapedDisplay.Sample(mySampler, float2(vo.uv.x, vo.uv.y));
 	if (color.a != 0)
 	{
-		float4 col = float4(0, 1, 1, color.a);
-		col.xyz *= noiseTex.Sample(mySampler, float2(vo.uv.x +sin(time/10)*10, vo.uv.y + cos(3*time/10)*5)).xyz;
+		float4 col = float4(vo.uv.y*abs(sin(time)), abs(cos(vo.uv.x+time)), 1, color.a);
+		col.xyz *= noiseTex.Sample(mySampler, float2(vo.uv.x +sin(time/20), vo.uv.y + cos(3*time/20)*5)).xyz*1.5.xxx;
 		return col;
 	}
 	return float4(0, 0, 0, 0);

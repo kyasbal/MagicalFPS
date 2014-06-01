@@ -24,6 +24,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,6 +65,9 @@
     <Compile Include="ControlForm.Designer.cs">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Effect\BaseShape\DividedPlaneBoard.cs" />
+    <Compile Include="Effect\BaseShape\PositionWithNormalInputLayout.cs" />
+    <Compile Include="Effect\BaseShape\ShapeBaseWithNormal.cs" />
     <Compile Include="Effect\BulletEffect.cs" />
     <Compile Include="Effect\CircleEffect.cs" />
     <Compile Include="Effect\EffectBase.cs" />
@@ -94,6 +98,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Resources\Effect\lazer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="mona-.pmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -103,6 +110,9 @@
     <Content Include="Resources\hattousin.gif" />
     <Content Include="Resources\miku.png" />
     <Content Include="Resources\Effect\noise.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Shader\beam.fx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Shader\oculus.fx">
