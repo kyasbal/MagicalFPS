@@ -35,22 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="log4net">
       <HintPath>.\log4net.dll</HintPath>
     </Reference>
-=======
-<<<<<<< HEAD
-    <Reference Include="SlimDX">
-=======
->>>>>>> 38742ac30ecddd3bfa04db31585710708e6863e5
     <Reference Include="RiftDotNet.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\mmflex\MikuMikuFlex\libs\RiftDotNet.Interface.dll</HintPath>
     </Reference>
     <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86">
->>>>>>> 5eced6fa2fc40d89fe3f20c05e290644d86cfc4e
       <HintPath>..\packages\SlimDX.4.0.13.44\lib\NET40\SlimDX.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -102,12 +94,8 @@
     <Content Include="mona-.pmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-<<<<<<< HEAD
-=======
-    <None Include="packages.config" />
     <Content Include="Resources\hattousin.gif" />
     <Content Include="Resources\miku.png" />
->>>>>>> 38742ac30ecddd3bfa04db31585710708e6863e5
     <Content Include="Resources\Shader\combine.fx" />
     <Content Include="Resources\Shader\oculus.fx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
