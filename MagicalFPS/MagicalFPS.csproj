@@ -35,7 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="SlimDX">
+=======
+    <Reference Include="RiftDotNet.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\mmflex\MikuMikuFlex\libs\RiftDotNet.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86">
+>>>>>>> 5eced6fa2fc40d89fe3f20c05e290644d86cfc4e
       <HintPath>..\packages\SlimDX.4.0.13.44\lib\NET40\SlimDX.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -51,24 +59,48 @@
   <ItemGroup>
     <Compile Include="Command\CommandAttribute.cs" />
     <Compile Include="Command\CommandListener.cs" />
+    <Compile Include="ControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlForm.Designer.cs">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameContext.cs" />
     <Compile Include="Input\IHandOperationChecker.cs" />
     <Compile Include="Input\JoystickHandOperationChecker.cs" />
+    <Compile Include="Input\KeyboardHandOperationChecker.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerViewForm.Designer.cs">
+      <DependentUpon>PlayerViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player\PlayerContext.cs" />
+    <Compile Include="Player\PlayerDescription.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="mona-.pmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
+    <Content Include="Resources\Shader\combine.fx" />
+    <Content Include="Resources\Shader\oculus.fx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="run.vmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\mmflex\MikuMikuFlex\MikuMikuFlex\MikuMikuFlex.csproj">
@@ -85,6 +117,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ControlForm.resx">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

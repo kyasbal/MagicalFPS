@@ -30,7 +30,7 @@ namespace MagicalFPS
             disableConsoleClosing();
             GameContext context=new GameContext();
             CommandListener listener=new CommandListener(context);
-            MessagePump.Run(context.MainWindow);
+            MessagePump.Run(context.MainWindow,context.Render);
             listener.Dispose();
         }
 

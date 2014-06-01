@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MMF.Input;
+using MMF.Utility;
 using SlimDX;
 
 namespace MagicalFPS.Input
@@ -19,6 +20,13 @@ namespace MagicalFPS.Input
 
         public Vector2 getMovementVector()
         {
+            if (_joyStickStateChecker != null)
+            {
+                if (_joyStickStateChecker.getJoystick(0).Length() != 0)
+                {
+                    Tracer.i("input");
+                }
+            }
             return _joyStickStateChecker.getJoystick(0);
         }
     }
