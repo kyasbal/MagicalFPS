@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MagicalFPS.Player
 {
-    class StartScreenScene:IPlayerScreenScene
+    class StartScreenScene : IPlayerScreenScene
     {
         private GameContext GameContext;
 
@@ -29,7 +29,7 @@ namespace MagicalFPS.Player
         private PathGeometry _geometry_2;
         private D2DSpriteTextformat format_2;
 
-        public StartScreenScene(GameContext context,PlayerContext player)
+        public StartScreenScene(GameContext context, PlayerContext player)
         {
             this.GameContext = context;
             this.PlayerContext = player;
@@ -72,7 +72,7 @@ namespace MagicalFPS.Player
 
         public void RenderSprite(MMF.Sprite.D2DSpriteBatch batch)
         {
-            if (PlayerContext.HandOperationChecker != null &&PlayerContext.HandOperationChecker.isAcceptButtonPressed())
+            if (PlayerContext.HandOperationChecker != null && PlayerContext.HandOperationChecker.isAcceptButtonPressed())
             {
                 return;
             }
@@ -81,7 +81,7 @@ namespace MagicalFPS.Player
             batch.DWRenderTarget.FillRectangle(col_2, new Rectangle(0, 0, 1000, 250));//キャラクターボックス
             batch.DWRenderTarget.DrawText("CHARACTER", format_1, new Rectangle(60, 10, 700, 100), col_1);
             batch.DWRenderTarget.DrawText(playerDescriptions[currentIndex].charactorName, format_2, new Rectangle(250, 100, 1000, 100), col_1);
-            //batch.DWRenderTarget.DrawBitmap(playerDescriptions[currentIndex].image, new Rectangle(60, 350, 450, 450));
+            batch.DWRenderTarget.DrawBitmap(playerDescriptions[currentIndex].image, new Rectangle(60, 350, 450, 450));
             batch.DWRenderTarget.FillGeometry(_geometry, col_1);
             batch.DWRenderTarget.FillGeometry(_geometry_2, col_1);
 
@@ -95,7 +95,7 @@ namespace MagicalFPS.Player
             batch.DWRenderTarget.DrawText(playerDescriptions[currentIndex].skillName_1, format_1, new Rectangle(skbox_x + 120, skbox_y + 150, 500, 100), col_1);
             batch.DWRenderTarget.DrawText(playerDescriptions[currentIndex].skillName_2, format_1, new Rectangle(skbox_x + 120, skbox_y + 300, 500, 100), col_1);
             batch.DWRenderTarget.DrawText(playerDescriptions[currentIndex].skillName_3, format_1, new Rectangle(skbox_x + 120, skbox_y + 450, 500, 100), col_1);
-   
+
         }
 
         private bool isInitialized;

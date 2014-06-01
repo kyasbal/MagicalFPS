@@ -38,8 +38,12 @@ namespace MagicalFPS.Player
             PlayerModel = PMXModelWithPhysics.OpenLoad("mona-.pmx", context.RenderContext);
             runMotion = PlayerModel.MotionManager.AddMotionFromFile("run.vmd", false);
             PlayerModel.MotionManager.ApplyMotion(runMotion);
+<<<<<<< HEAD
             EyeTextureRenderer = new OculusDisplayRenderer(context.RenderContext, context.GameWorld,0,context.OculusManager,this);
 
+=======
+            EyeTextureRenderer = new OculusDisplayRenderer(context.RenderContext, context.GameWorld, 0, context.OculusManager, this);
+>>>>>>> d42377e10737b985c910026d3d32129b30d56411
             ViewForm.WorldSpace.AddResource(EyeTextureRenderer);
             context.GameWorld.AddResource(PlayerModel);
         }
