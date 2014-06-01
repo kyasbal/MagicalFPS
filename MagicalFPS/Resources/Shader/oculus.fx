@@ -56,7 +56,9 @@ float4 PS(VS_OUTPUT output) :SV_Target
 	output.uv.y *= aspectRatio;
 	float2 calcedUV = s*output.uv + 0.5.xx;
 		if (calcedUV.x > 1 || calcedUV.x < 0 || calcedUV.y>1 || calcedUV.y < 0)return float4(0, 0, 0, 1);
-	return viewTex.Sample(basicSampler, calcedUV);
+	float4 color = viewTex.Sample(basicSampler, calcedUV);
+	color.w = 1;
+	return color;
 }
 
 technique10 DefaultTechnique

@@ -39,6 +39,7 @@ namespace MagicalFPS.Player
             runMotion = PlayerModel.MotionManager.AddMotionFromFile("run.vmd", false);
             PlayerModel.MotionManager.ApplyMotion(runMotion);
             EyeTextureRenderer = new OculusDisplayRenderer(context.RenderContext, context.GameWorld,0,context.OculusManager,this);
+
             ViewForm.WorldSpace.AddResource(EyeTextureRenderer);
             context.GameWorld.AddResource(PlayerModel);
         }

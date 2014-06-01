@@ -147,5 +147,11 @@ namespace MagicalFPS.Command
             OculusDisplayRenderer.RiftLensCenterOffset=new Vector2(float.Parse(args[0]),float.Parse(args[1]));
             Tracer.i("レンズオフセット:{0}",OculusDisplayRenderer.RiftLensCenterOffset);
         }
+
+        [Command("start-effect", 0, "エフェクトの再生をテストします。")]
+        public void StartEffect(string[] args)
+        {
+            _context.StartEffect();
+        }
     }
 }
