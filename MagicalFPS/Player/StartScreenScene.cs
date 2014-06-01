@@ -81,7 +81,7 @@ namespace MagicalFPS.Player
             batch.DWRenderTarget.FillRectangle(col_2, new Rectangle(0, 0, 1000, 250));//キャラクターボックス
             batch.DWRenderTarget.DrawText("CHARACTER", format_1, new Rectangle(60, 10, 700, 100), col_1);
             batch.DWRenderTarget.DrawText(playerDescriptions[currentIndex].charactorName, format_2, new Rectangle(250, 100, 1000, 100), col_1);
-            batch.DWRenderTarget.DrawBitmap(playerDescriptions[currentIndex].image, new Rectangle(60, 350, 450, 450));
+            //batch.DWRenderTarget.DrawBitmap(playerDescriptions[currentIndex].image, new Rectangle(60, 350, 450, 450));
             batch.DWRenderTarget.FillGeometry(_geometry, col_1);
             batch.DWRenderTarget.FillGeometry(_geometry_2, col_1);
 
