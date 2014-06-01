@@ -29,5 +29,10 @@ namespace MagicalFPS.Input
             }
             return _joyStickStateChecker.getJoystick(0);
         }
+
+        public bool isAcceptButtonPressed()
+        {
+            return _joyStickStateChecker.getButtonState(3);
+        }
     }
 }
