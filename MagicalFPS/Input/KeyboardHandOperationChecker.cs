@@ -54,6 +54,12 @@ namespace MagicalFPS.Input
             if (keyboardChecker.IsPressed(_config.MoveBottom)) retValue += new Vector2(0, 1000);
             return retValue;
         }
+
+
+        public bool isAcceptButtonPressed()
+        {
+            return keyboardChecker.IsPressed(Key.Return);
+        }
     }
 
     public interface IKeyboardKeyConfig

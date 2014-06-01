@@ -77,8 +77,10 @@
     <Compile Include="PlayerViewForm.Designer.cs">
       <DependentUpon>PlayerViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Player\IPlayerScreenScene.cs" />
     <Compile Include="Player\PlayerContext.cs" />
     <Compile Include="Player\PlayerDescription.cs" />
+    <Compile Include="Player\StartScreenScene.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,9 +89,11 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="mona-.pmx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
+    <Content Include="Resources\hattousin.gif" />
+    <Content Include="Resources\miku.png" />
     <Content Include="Resources\Shader\combine.fx" />
     <Content Include="Resources\Shader\oculus.fx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

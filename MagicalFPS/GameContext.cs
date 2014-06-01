@@ -63,8 +63,8 @@ namespace MagicalFPS
         {
             if (playerDescriptions != null) return;
             playerDescriptions = new PlayerDescription[charactorCount];
-            playerDescriptions[0] = new PlayerDescription(batch,"八頭身モナー", "たま", "なみ", "おこる", "C:\\Users\\Yidao\\Documents\\MagicalFPS\\hattousin.gif");
-            playerDescriptions[1] = new PlayerDescription(batch,"初音ミク", "ネギビーム", "ネギカッター", "ネギバースト", "C:\\Users\\Yidao\\Documents\\MagicalFPS\\miku.png");
+            playerDescriptions[0] = new PlayerDescription(batch, "八頭身モナー", "たま", "なみ", "おこる", "..\\..\\..\\hattousin.gif");
+            playerDescriptions[1] = new PlayerDescription(batch, "初音ミク", "ネギビーム", "ネギカッター", "ネギバースト", "..\\..\\..\\miku.png");
         }
 
         public void Render()
