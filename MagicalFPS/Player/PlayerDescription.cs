@@ -17,13 +17,13 @@ namespace MagicalFPS.Player
             skillName_1 = s1;
             skillName_2 = s2;
             skillName_3 = s3;
-            //image =  batch.CreateBitmap(@img);
+            image =  batch.CreateBitmap(@img);
         }
 
         public string charactorName;
         public string skillName_1;
         public string skillName_3;
         public string skillName_2;
-        //public SlimDX.Direct2D.Bitmap image;
+        public SlimDX.Direct2D.Bitmap image;
     }
 }
