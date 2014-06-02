@@ -69,13 +69,11 @@ namespace MagicalFPS.MagicEffect
         /// <param name="arg3">The arg3.</param>
         private void Renderbeam(PlaneBoard arg1, SlimDX.Direct3D11.Effect arg2, ShaderResourceView arg3)
         {
-            arg1.Transformer.Rotation = Quaternion.RotationAxis(-Vector3.Cross(_startDirection, Vector3.UnitZ),
-                Vector3.Dot(_startDirection, Vector3.UnitZ));
             arg1.DefaultEffectSubscribe();
             beffect.GetVariableBySemantic("NOISETEX").AsResource().SetResource(beamView);
-            beffect.GetVariableBySemantic("TIME").AsScalar().Set(lastTime);
+            beffect.GetVariableBySemantic("TIME").AsScalar().Set(lastTime-1f);
             beffect.GetVariableBySemantic("STARTPOS").AsVector().Set(_startPosition);
-            beffect.GetVariableBySemantic("TARGETPOS").AsVector().Set(new Vector3(0,0,300));
+            beffect.GetVariableBySemantic("TARGETPOS").AsVector().Set(-new Vector3(0,0,300));
             beffect.GetVariableBySemantic("UP").AsVector().Set(Vector3.TransformNormal(Vector3.UnitY*100,Matrix.RotationZ((float) (2*Math.PI/beamEffects.Length*currentBeamIndex))));
             beffect.GetVariableBySemantic("EYE").AsVector().Set(_context.RenderContext.CurrentTargetContext.MatrixManager.ViewMatrixManager.CameraPosition);
             beffect.GetVariableBySemantic("UVOFFSET").AsScalar().Set((float) (0.2*currentBeamIndex));
@@ -110,14 +108,27 @@ namespace MagicalFPS.MagicEffect
         protected override void Update(long time)
         {
             lastTime = time/1000f;
-            frontCircle.Transformer.Rotation = Quaternion.RotationAxis(Vector3.UnitZ, time/1000f);
-            frontCircle.Transformer.Scale =new Vector3( 1f - (float)Math.Exp(-(time/100f)));
+            frontCircle.Transformer.Rotation = Quaternion.RotationAxis(Vector3.UnitZ, time/200f);
+            frontCircle.Transformer.Scale =new Vector3( 1f - (float)Math.Exp(-(time/200f)));
+            
             for (int i = 0; i < subCircle.Length; i++)
             {
                 subCircle[i].Transformer.Scale = new Vector3(1f - (float)Math.Exp(-(time / 100f)));
-                subCircle[i].Transformer.Position = new Vector3((float)(30 * Math.Cos(2 * Math.PI / subCircle.Length * i - time / 500f)), (float)(30 * Math.Sin(2 * Math.PI / subCircle.Length * i - time / 500f)), 5);
+                subCircle[i].Transformer.Position = new Vector3((float)(time/40f * Math.Cos(2 * Math.PI / subCircle.Length * i - time / 500f)), (float)(time/40f * Math.Sin(2 * Math.PI / subCircle.Length * i - time / 500f)), 5);
             }
-            
+            float at; //Activated time
+            at = 1000;
+            if (time > at)
+            {
+                frontCircle.Transformer.Scale = new Vector3((float)Math.Exp(-((time - at) / 200f)));
+                if (time > at+200)
+                {
+                    for (int i = 0; i < subCircle.Length; i++)
+                    {
+                        subCircle[i].Transformer.Scale = new Vector3(0);
+                    }
+                }
+            }
         }
 
         public override void Dispose()
