@@ -10,5 +10,7 @@ namespace MagicalFPS.Input
     public interface IHandOperationChecker
     {
         Vector2 getMovementVector();
+
+        bool isAcceptButtonPressed();
     }
 }

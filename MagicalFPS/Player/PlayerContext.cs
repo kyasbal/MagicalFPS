@@ -21,28 +21,30 @@ using CGHelper = MMF.Utility.CGHelper;
 
 namespace MagicalFPS.Player
 {
-    public class PlayerContext:OculusD2DHandler
+    public class PlayerContext : OculusD2DHandler
     {
         public OculusDisplayRenderer EyeTextureRenderer;
 
         private IMotionProvider runMotion;
 
-        public PlayerContext(GameContext context,int index)
+        public PlayerContext(GameContext context, int index)
         {
             Context = context;
             this.PlayerIndex = index;
-            ViewForm=new PlayerViewForm(context.RenderContext);
+            ViewForm = new PlayerViewForm(context.RenderContext);
+            currentScene = new StartScreenScene(Context, this);
             ViewForm.Show();
             //TODO キャラクターのファクトリクラスの作成など
             PlayerModel = PMXModelWithPhysics.OpenLoad("mona-.pmx", context.RenderContext);
             runMotion = PlayerModel.MotionManager.AddMotionFromFile("run.vmd", false);
             PlayerModel.MotionManager.ApplyMotion(runMotion);
             EyeTextureRenderer = new OculusDisplayRenderer(context.RenderContext, context.GameWorld,0,context.OculusManager,this);
+
             ViewForm.WorldSpace.AddResource(EyeTextureRenderer);
             context.GameWorld.AddResource(PlayerModel);
         }
 
-        public GameContext Context { get;private set; }
+        public GameContext Context { get; private set; }
 
         /// <summary>
         /// プレイヤー番号
@@ -64,16 +66,20 @@ namespace MagicalFPS.Player
         /// </summary>
         public PMXModel PlayerModel { get; private set; }
 
-        private Vector3 camRot = Vector3.UnitZ*30;
+        private Vector3 camRot = Vector3.UnitZ * 30;
 
         public void Render()
         {
+            if (currentScene != null && currentScene.IsInitialized)
+            {
+                currentScene.CheckKeyState();
+            }
             CameraProvider cameraProvider = EyeTextureRenderer.cameraProvider;
             //camRot = Vector3.TransformNormal(camRot, Matrix.RotationY(0.01f));
-            cameraProvider.CameraPosition = camRot + Vector3.UnitY*30;
-            ISensorFusion sensorFusion = Context.OculusManager.getSensorFusion(0);
-            Vector3 cp2la = Vector3.TransformNormal(-camRot,Matrix.RotationQuaternion(sensorFusion.GetOrientation()));
-            cameraProvider.CameraLookAt = cameraProvider.CameraPosition + cp2la*30;
+            //cameraProvider.CameraPosition = camRot + Vector3.UnitY*30;
+            //ISensorFusion sensorFusion = Context.OculusManager.getSensorFusion(0);
+            //Vector3 cp2la = Vector3.TransformNormal(-camRot,Matrix.RotationQuaternion(sensorFusion.GetOrientation()));
+            //cameraProvider.CameraLookAt = cameraProvider.CameraPosition + cp2la*30;
             if (HandOperationChecker != null)
             {
                 Vector2 normalized = HandOperationChecker.getMovementVector();
@@ -84,6 +90,8 @@ namespace MagicalFPS.Player
                 else
                 {
                     normalized.Normalize();
+
+
                     PlayerModel.Transformer.Position += new Vector3(normalized.X, 0, normalized.Y);
                     if (PlayerModel.MotionManager.CurrentMotionProvider == null || !PlayerModel.MotionManager.CurrentMotionProvider.IsPlaying)
                     {
@@ -93,18 +101,24 @@ namespace MagicalFPS.Player
             }
             EyeTextureRenderer.RenderTexture();
             ViewForm.Render();
+
         }
 
-        private D2DSpriteSolidColorBrush col;
+        private IPlayerScreenScene currentScene;
 
         protected override void DrawBatch(D2DSpriteBatch batch)
         {
-            //batch.DWRenderTarget.FillRectangle(col,batch.FillRectangle);
+            if (currentScene != null)
+            {
+                if (!currentScene.IsInitialized) currentScene.OnLoad(batch);
+                currentScene.RenderSprite(batch);
+
+            }
         }
 
         public override void OnLoad(D2DSpriteBatch batch)
         {
-            col = batch.CreateSolidColorBrush(Color.FromArgb(120,255,0,0));
+            if (currentScene != null) currentScene.OnLoad(batch);
         }
     }
 }

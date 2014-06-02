@@ -34,7 +34,7 @@ namespace MagicalFPS
             InitializeComponent();
             Size = MainWindowSize;
             FormBorderStyle= FormBorderStyle.FixedSingle;
-            BackgroundColor=new Vector3(1,1,1);
+            BackgroundColor=new Vector3(0,0,0);
         }
 
         protected override void OnLoad(EventArgs e)
