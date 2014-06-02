@@ -153,5 +153,11 @@ namespace MagicalFPS.Command
         {
             _context.StartEffect();
         }
+
+        [Command("init-players", 0, "プレイヤー画面を初期化します。")]
+        public void InitializePlayers(string[] args)
+        {
+            _context.InitializePlayerContexts();
+        }
     }
 }

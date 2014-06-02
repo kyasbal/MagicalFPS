@@ -11,12 +11,12 @@ namespace MagicalFPS.MagicEffect.BaseShape
     {
         private readonly int _divCount;
 
-        public DividedPlaneBoard(RenderContext context, ShaderResourceView resView,int divCount, PlaneBoardDescription desc = null) : base(context, resView, desc)
+        public DividedPlaneBoard(RenderContext context, ShaderResourceView resView,int divCount, PlaneBoard.PlaneBoardDescription desc = null) : base(context, resView, desc)
         {
             _divCount = divCount;
         }
 
-        public DividedPlaneBoard(RenderContext context, ShaderResourceView resView,int divCount, Vector2 size, PlaneBoardDescription desc = null) : base(context, resView, size, desc)
+        public DividedPlaneBoard(RenderContext context, ShaderResourceView resView,int divCount, Vector2 size, PlaneBoard.PlaneBoardDescription desc = null) : base(context, resView, size, desc)
         {
             _divCount = divCount;
         }

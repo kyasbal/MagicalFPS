@@ -1,3 +1,4 @@
 /packages
 /*.suo
 /MagicalFPS.sln.GhostDoc.xml
+/MagicalFPS/obj

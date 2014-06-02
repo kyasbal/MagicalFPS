@@ -35,11 +35,11 @@ namespace MagicalFPS
             GameWorld.AddResource(DebugGrid);
             DirectInput = new DirectInputManager(RenderContext, MainWindow);
             OculusManager = new OculusDeviceManager(RenderContext);
-            PlayerContexts[0]=new PlayerContext(this,0);
-            PlayerContexts[1]=new PlayerContext(this,1);
+            //PlayerContexts[0]=new PlayerContext(this,0);
+            //PlayerContexts[1]=new PlayerContext(this,1);
             Controller=new ControlForm(this);
             Controller.Show();
-            _drawable = new CircleEffect(this);
+            _drawable = new BulletEffect(this);
             GameWorld.AddResource(_drawable);
             _drawable.Start(new Vector3(0,0,0),new Vector3(0,0,1));
 
@@ -66,7 +66,7 @@ namespace MagicalFPS
         public int charactorCount = 2;
 
         public PlayerDescription[] playerDescriptions;
-        private CircleEffect _drawable;
+        private EffectBase _drawable;
 
         public void InitializePlayerDescriptions(D2DSpriteBatch batch)
         {
@@ -89,8 +89,19 @@ namespace MagicalFPS
             MainWindow.Render();
             foreach (var playerContext in PlayerContexts)
             {
-                playerContext.Render();
+                if(playerContext!=null)playerContext.Render();
             }
+        }
+
+        public void InitializePlayerContexts()
+        {
+            if (PlayerContexts[0] != null)
+            {
+                Tracer.e("プレイヤーは既に初期化されています。");
+                return;
+            }
+            PlayerContexts[0]=new PlayerContext(this,0);
+            PlayerContexts[1]=new PlayerContext(this,1);
         }
 
         public void StartEffect()
