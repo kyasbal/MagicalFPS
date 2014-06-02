@@ -111,10 +111,10 @@ namespace MagicalFPS.MagicEffect
         {
             lastTime = time/1000f;
             frontCircle.Transformer.Rotation = Quaternion.RotationAxis(Vector3.UnitZ, time/1000f);
-            frontCircle.Transformer.Scale =new Vector3( 1f - (float)Math.Exp(-(time/100f)));
+            frontCircle.Transformer.Scale =new Vector3( 1f - (float)Math.Exp(-(time/250f)));
             for (int i = 0; i < subCircle.Length; i++)
             {
-                subCircle[i].Transformer.Scale = new Vector3(1f - (float)Math.Exp(-(time / 100f)));
+                subCircle[i].Transformer.Scale = new Vector3(1f - (float)Math.Exp(-(time / 250f)));
                 subCircle[i].Transformer.Position = new Vector3((float)(30 * Math.Cos(2 * Math.PI / subCircle.Length * i - time / 500f)), (float)(30 * Math.Sin(2 * Math.PI / subCircle.Length * i - time / 500f)), 5);
             }
             
