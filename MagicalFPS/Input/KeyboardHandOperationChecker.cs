@@ -17,30 +17,19 @@ namespace MagicalFPS.Input
 
         public class DefaultKeyConfig:IKeyboardKeyConfig
         {
-            public Key MoveRight
-            {
-                get { return Key.RightArrow; }
-            }
-
-            public Key MoveLeft
-            {
-                get { return Key.LeftArrow; }
-            }
-
-            public Key MoveTop {get { return Key.UpArrow; }}
-
-            public Key MoveBottom
-            {
-                get { return Key.DownArrow; }
-            }
+            public virtual Key MoveRight{get { return Key.RightArrow; }}
+            public virtual Key MoveLeft{get { return Key.LeftArrow; }}
+            public virtual Key MoveTop {get { return Key.UpArrow; }}
+            public virtual Key MoveBottom{get{ return Key.DownArrow;}}
+            public virtual Key Jump { get{return Key.LeftShift;} }
+            public virtual Key Sit { get{return Key.LeftControl;} }
+            public virtual Key Cancel { get{return Key.Backspace;} }
+            public virtual Key Accept { get{return Key.Return;} }
         }
 
         public KeyboardHandOperationChecker(DirectInputManager directInputManager,int index,IKeyboardKeyConfig config=null)
         {
-            if (config == null)
-            {
-                config=new DefaultKeyConfig();
-            }
+            config = config ?? new DefaultKeyConfig();
             _config = config;
             keyboardChecker = directInputManager.getKeyboardChecker(index);
         }
@@ -58,18 +47,22 @@ namespace MagicalFPS.Input
 
         public bool isAcceptButtonPressed()
         {
-            return keyboardChecker.IsPressed(Key.Return);
+            return keyboardChecker.IsPressed(_config.Accept);
         }
-    }
 
-    public interface IKeyboardKeyConfig
-    {
-        Key MoveRight { get; }
+        public bool isCancelButtonPressed()
+        {
+            return keyboardChecker.IsPressed(_config.Cancel);
+        }
 
-        Key MoveLeft { get; }
+        public bool isJumpButtonPressed()
+        {
+            return keyboardChecker.IsPressed(_config.Jump);
+        }
 
-        Key MoveTop { get; }
-
-        Key MoveBottom { get; }
+        public bool isSitButtonPressed()
+        {
+            return keyboardChecker.IsPressed(_config.Sit);
+        }
     }
 }
