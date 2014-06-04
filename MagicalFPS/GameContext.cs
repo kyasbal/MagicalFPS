@@ -115,5 +115,10 @@ namespace MagicalFPS
             _drawable.Dispose();
             RenderContext.Dispose();
         }
+
+        internal void ReloadEffect()
+        {
+            _drawable.ReloadEffectFile();
+        }
     }
 }

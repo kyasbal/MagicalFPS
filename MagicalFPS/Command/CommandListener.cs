@@ -159,5 +159,11 @@ namespace MagicalFPS.Command
         {
             _context.InitializePlayerContexts();
         }
+
+        [Command("reload-effect",0,"エフェクトをリロードします")]
+        public void ReloadEffect(string[] args)
+        {
+            _context.ReloadEffect();
+        }
     }
 }

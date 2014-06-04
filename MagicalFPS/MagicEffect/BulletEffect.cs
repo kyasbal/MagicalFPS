@@ -6,6 +6,7 @@ using MMF.Model.Shape;
 using SlimDX;
 using SlimDX.Direct3D11;
 using CGHelper = MMF.Utility.CGHelper;
+using MMF.Utility;
 
 namespace MagicalFPS.MagicEffect
 {
@@ -42,7 +43,7 @@ namespace MagicalFPS.MagicEffect
                 .AsVector()
                 .Set(game.RenderContext.CurrentTargetContext.MatrixManager.ViewMatrixManager.CameraPosition);
             effect.GetVariableBySemantic("UVOFFSET").AsScalar().Set(uvOffset);
-            effect.GetVariableBySemantic("LAZERHEIGHT").AsScalar().Set(20);//レーザーの幅
+            effect.GetVariableBySemantic("LAZERHEIGHT").AsScalar().Set(40*(1-(float)Math.Exp(-lastTime/500d)));//レーザーの幅
         }
 
         protected override void Draw(long time)
@@ -58,6 +59,21 @@ namespace MagicalFPS.MagicEffect
         public override void Dispose()
         {
             
+        }
+
+        public override void ReloadEffectFile()
+        {
+            base.ReloadEffectFile();
+            try
+            {
+                var effect = CGHelper.CreateEffectFx5("..\\..\\Resources\\Shader\\bulletShader.fx",game.RenderContext.DeviceManager.Device);
+                this.effect = effect;
+                board.Description.Effect = effect;
+            }catch(Exception e)
+            {
+                Tracer.e("エフェクトコンパイルエラー:{0}", e.ToString());
+            }
+
         }
     }
 }

@@ -74,5 +74,10 @@ namespace MagicalFPS.MagicEffect
             act();
             immediateContext.OutputMerger.SetTargets(depth, immediateContext.OutputMerger.GetRenderTargets(1));
         }
+
+        public virtual void ReloadEffectFile()
+        {
+            
+        }
     }
 }
