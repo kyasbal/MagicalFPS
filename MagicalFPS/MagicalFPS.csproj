@@ -65,6 +65,8 @@
     <Compile Include="ControlForm.Designer.cs">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Input\IJoystickKeyConfig.cs" />
+    <Compile Include="Input\IKeyboardKeyConfig.cs" />
     <Compile Include="MagicEffect\BaseShape\DividedPlaneBoard.cs" />
     <Compile Include="MagicEffect\BaseShape\PositionWithNormalInputLayout.cs" />
     <Compile Include="MagicEffect\BaseShape\ShapeBaseWithNormal.cs" />
