@@ -83,6 +83,9 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="PlayerViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +103,66 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="bin\Debug\AssimpNet.dll" />
+    <Content Include="bin\Debug\AssimpNet.pdb" />
+    <Content Include="bin\Debug\AssimpNet.xml" />
+    <Content Include="bin\Debug\BulletSharp.dll" />
+    <Content Include="bin\Debug\log4net.dll" />
+    <Content Include="bin\Debug\log4net.pdb" />
+    <Content Include="bin\Debug\log4net.xml" />
+    <Content Include="bin\Debug\MagicalFPS.exe" />
+    <Content Include="bin\Debug\MagicalFPS.pdb" />
+    <Content Include="bin\Debug\MikuMikuFlex.dll" />
+    <Content Include="bin\Debug\MikuMikuFlex.pdb" />
+    <Content Include="bin\Debug\MMDFileParser.dll" />
+    <Content Include="bin\Debug\MMDFileParser.pdb" />
+    <Content Include="bin\Debug\NiWrapper.Net.dll" />
+    <Content Include="bin\Debug\NiWrapper.NiTE.Net.dll" />
+    <Content Include="bin\Debug\OculusForMikuMikuFlex.dll" />
+    <Content Include="bin\Debug\OculusForMikuMikuFlex.pdb" />
+    <Content Include="bin\Debug\protobuf-net.dll" />
+    <Content Include="bin\Debug\protobuf-net.xml" />
+    <Content Include="bin\Debug\Resources\Effect\circle.png" />
+    <Content Include="bin\Debug\Resources\Effect\lazer.png" />
+    <Content Include="bin\Debug\Resources\Effect\noise.png" />
+    <Content Include="bin\Debug\Resources\Effect\thunder.png" />
+    <Content Include="bin\Debug\Resources\Shader\bulletShader.fx" />
+    <Content Include="bin\Debug\Resources\Shader\circleShader.fx" />
+    <Content Include="bin\Debug\Resources\Shader\convergenceBeam.fx" />
+    <Content Include="bin\Debug\Resources\Shader\oculus.fx" />
+    <Content Include="bin\Debug\Resource\Shader\debugDot.fx" />
+    <Content Include="bin\Debug\Resource\Shader\GridShader.fx" />
+    <Content Include="bin\Debug\Resource\Shader\Xshader.fx" />
+    <Content Include="bin\Debug\Resource\Toon\toon0.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon1.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon10.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon2.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon3.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon4.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon5.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon6.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon7.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon8.bmp" />
+    <Content Include="bin\Debug\Resource\Toon\toon9.bmp" />
+    <Content Include="bin\Debug\RiftDotNet.dll" />
+    <Content Include="bin\Debug\RiftDotNet.Interface.dll" />
+    <Content Include="bin\Debug\RiftDotNet.Interface.pdb" />
+    <Content Include="bin\Debug\RiftDotNet.pdb" />
+    <Content Include="bin\Debug\RiftDotNet.Win32.dll" />
+    <Content Include="bin\Debug\RiftDotNet.Win32.pdb" />
+    <Content Include="bin\Debug\RiftDotNet.x64.dll" />
+    <Content Include="bin\Debug\RiftDotNet.x64.pdb" />
+    <Content Include="bin\Debug\SharpDX.dll" />
+    <Content Include="bin\Debug\SharpDX.xml" />
+    <Content Include="bin\Debug\SlimDX.dll" />
+    <Content Include="bin\Debug\System.Data.SQLite.dll" />
+    <Content Include="bin\Debug\TargaImage.dll" />
+    <Content Include="bin\Debug\TargaImage.xml" />
+    <Content Include="bin\Debug\x64\SQLite.Interop.dll" />
+    <Content Include="bin\Debug\x86\SQLite.Interop.dll" />
+    <Content Include="log4net.dll" />
+    <Content Include="log4net.pdb" />
+    <Content Include="log4net.xml" />
     <Content Include="Resources\Effect\lazer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -132,6 +195,10 @@
     <Content Include="run.vmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="bin\Debug\effect.cache" />
+    <None Include="bin\Debug\MagicalFPS.exe.config" />
+    <None Include="bin\Debug\mona-.pmx" />
+    <None Include="bin\Debug\run.vmd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -64,15 +64,16 @@ namespace MagicalFPS.MagicEffect
         public override void ReloadEffectFile()
         {
             base.ReloadEffectFile();
-            try
+            /*try
             {
-                var effect = CGHelper.CreateEffectFx5("..\\..\\Resources\\Shader\\bulletShader.fx",game.RenderContext.DeviceManager.Device);
+                var effect = CGHelper.CreateEffectFx5("..\\..\\Resources\\Shader\\bulletShader.fx", game.RenderContext.DeviceManager.Device);
                 this.effect = effect;
                 board.Description.Effect = effect;
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Tracer.e("エフェクトコンパイルエラー:{0}", e.ToString());
-            }
+            }*/
 
         }
     }
